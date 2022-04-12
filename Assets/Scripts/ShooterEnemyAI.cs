@@ -21,9 +21,8 @@ public class ShooterEnemyAI : MonoBehaviour
     void Start()
     {
         rbEnemy = GetComponent<Rigidbody>();
-        player = GameObject.Find("Player");
+        player = GameObject.Find("PlayerShield");
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -41,9 +40,10 @@ public class ShooterEnemyAI : MonoBehaviour
         }
     }
 
-
     void Update()
     {
+
+        transform.LookAt(playerChar);
 
         if (playerInRange)
         {
@@ -54,9 +54,6 @@ public class ShooterEnemyAI : MonoBehaviour
             Vector3 lookDirection = (player.transform.position - transform.position).normalized;
             rbEnemy.AddForce(lookDirection * speed);
         }
-
-
-        transform.LookAt(playerChar);
 
         if (transform.position.x < -xRange)
         {

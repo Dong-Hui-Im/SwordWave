@@ -114,7 +114,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!114 &3590085215574921572
 MonoBehaviour:
@@ -140,10 +140,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 537ae3e88c00f0a4792bf96d87716ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2762961539335162095, guid: ad297a84b672ed241b83ec5a0eb7805e, type: 3}
+  player: {fileID: 2582975545321427659, guid: ed9076e36c4f64a46a88988ff6a11692, type: 3}
   speed: 5
   distance: 0
-  playerChar: {fileID: 2762961539335162084, guid: ad297a84b672ed241b83ec5a0eb7805e, type: 3}
+  playerChar: {fileID: 2582975545321427658, guid: ed9076e36c4f64a46a88988ff6a11692, type: 3}
   xRange: 10
   zRange: 5
   playerInRange: 0

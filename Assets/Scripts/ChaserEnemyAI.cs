@@ -18,7 +18,7 @@ public class ChaserEnemyAI : MonoBehaviour
     void Start()
     {
         rbEnemy = GetComponent<Rigidbody>();
-        player = GameObject.Find("Player");
+        player = GameObject.Find("PlayerShield");
     }
 
     void Update()

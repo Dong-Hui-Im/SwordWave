@@ -47,7 +47,7 @@ public class ShooterEnemyAI : MonoBehaviour
 
         if (playerInRange)
         {
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            Instantiate(projectilePrefab, transform.position, transform.rotation);
         }
         else
         {

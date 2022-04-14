@@ -15,6 +15,8 @@ public class ShooterEnemyAI : MonoBehaviour
     public float xRange = 10f;
     public float zRange = 10f;
 
+    public bool cooldown = true;
+    public float cooldownTime = 10f;
     public bool playerInRange;
     public GameObject projectilePrefab;
 
@@ -22,6 +24,7 @@ public class ShooterEnemyAI : MonoBehaviour
     {
         rbEnemy = GetComponent<Rigidbody>();
         player = GameObject.Find("PlayerShield");
+        cooldown = true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -47,7 +50,16 @@ public class ShooterEnemyAI : MonoBehaviour
 
         if (playerInRange)
         {
+            Vector3 lookDirection = (player.transform.position - transform.position).normalized;
+            rbEnemy.AddForce(lookDirection * -speed);
+
+        if (cooldown)
+        {
             Instantiate(projectilePrefab, transform.position, transform.rotation);
+            StartCoroutine(ShootTime(cooldownTime));
+            cooldown = false;
+        }
+
         }
         else
         {
@@ -71,5 +83,11 @@ public class ShooterEnemyAI : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, zRange);
         }
+    }
+
+    IEnumerator ShootTime(float shootCooldown)
+    {
+        yield return new WaitForSeconds(shootCooldown);
+        cooldown = true;
     }
 }

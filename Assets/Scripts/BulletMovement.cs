@@ -23,9 +23,5 @@ public class BulletMovement : MonoBehaviour
         {
             bulletSpeed *= -1;
         }
-        if (other.gameObject.CompareTag("Bullet"))
-        {
-            bulletSpeed *= -1;
-        }
     }
 }

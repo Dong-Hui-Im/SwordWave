@@ -178,6 +178,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerShield
       objectReference: {fileID: 0}
+    - target: {fileID: 2582975545321427660, guid: ed9076e36c4f64a46a88988ff6a11692, type: 3}
+      propertyPath: m_Radius
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582975545493371213, guid: ed9076e36c4f64a46a88988ff6a11692, type: 3}
+      propertyPath: m_TagString
+      value: Sword
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed9076e36c4f64a46a88988ff6a11692, type: 3}
 --- !u!1 &705507993
@@ -327,7 +335,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 18
+  orthographic size: 26.048063
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -388,6 +396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
+  - {fileID: 5477677833287114761, guid: d40511ad236cefb42a7f56675fbea32b, type: 3}
   - {fileID: 8384697504102606088, guid: d3fdcb625ab1e3945ad5065e0dc96f98, type: 3}
   waveNumber: 0
   enemyCount: 0

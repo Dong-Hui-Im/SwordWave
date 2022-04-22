@@ -12,6 +12,7 @@ public class ShooterEnemyAI : MonoBehaviour
     private Vector3 offset = new Vector3(0, 0, 3);
     public Transform playerChar;
 
+
     public float xRange = 10f;
     public float zRange = 10f;
 
@@ -23,7 +24,6 @@ public class ShooterEnemyAI : MonoBehaviour
     void Start()
     {
         rbEnemy = GetComponent<Rigidbody>();
-        player = GameObject.Find("PlayerShield");
         cooldown = true;
     }
 
@@ -45,13 +45,14 @@ public class ShooterEnemyAI : MonoBehaviour
 
     void Update()
     {
+        player = GameObject.Find("Player");
 
         transform.LookAt(playerChar);
 
         if (playerInRange)
         {
-            Vector3 lookDirection = (player.transform.position - transform.position).normalized;
-            rbEnemy.AddForce(lookDirection * -speed);
+            Vector3 moveDirection = (player.transform.position - transform.position).normalized;
+            rbEnemy.AddForce(moveDirection * -speed);
 
         if (cooldown)
         {
@@ -63,8 +64,8 @@ public class ShooterEnemyAI : MonoBehaviour
         }
         else
         {
-            Vector3 lookDirection = (player.transform.position - transform.position).normalized;
-            rbEnemy.AddForce(lookDirection * speed);
+            Vector3 moveDirection = (player.transform.position - transform.position).normalized;
+            rbEnemy.AddForce(moveDirection * speed);
         }
 
         if (transform.position.x < -xRange)

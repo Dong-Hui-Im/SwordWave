@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class DestroyOutOfBounds : MonoBehaviour
 { 
-    void Start()
-    {
 
-    }
-
+    // boundary variables
     private float xRange = 44;
     private float zRange = 14;
 
+    //if anything is outside the boundary, it destroys the object
     void Update()
     {
         if (transform.position.x < -xRange)

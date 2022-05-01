@@ -7,12 +7,4 @@ public class Enemy : MonoBehaviour
 
     //This is acting as an enemy tag
 
-    void Start()
-    {
-        
-    }
-    void Update()
-    {
-        
-    }
 }

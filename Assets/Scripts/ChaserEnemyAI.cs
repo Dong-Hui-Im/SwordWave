@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChaserEnemyAI : MonoBehaviour
 {
-
+    // movement variables
     public GameObject player;
     private Rigidbody rbEnemy;
     public float speed;
@@ -12,22 +12,26 @@ public class ChaserEnemyAI : MonoBehaviour
     private Vector3 offset = new Vector3(0, 0, 3);
     public Transform playerChar;
 
+    // boundary variables
     public float xRange = 10f;
     public float zRange = 10f;
 
     void Start()
     {
         rbEnemy = GetComponent<Rigidbody>();
-        player = GameObject.Find("PlayerShield");
     }
 
     void Update()
     {
+        player = GameObject.Find("PlayerShield"); // constantly finds the player 
+
+        // makes the enemy constantly move towards the player
         Vector3 lookDirection = (player.transform.position - transform.position).normalized;
         rbEnemy.AddForce(lookDirection * speed);
 
-        transform.LookAt(playerChar);
+        transform.LookAt(playerChar); // makes the enemy look towards the player
 
+        // enemy boundaries
         if (transform.position.x < -xRange)
         {
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);

@@ -4,16 +4,7 @@ using UnityEngine;
 
 public class SwordController : MonoBehaviour
 {
-
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-       
-    }
+    // if the sword collides with anything with the enemy tag, it will destroy it
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,5 +13,4 @@ public class SwordController : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-
 }

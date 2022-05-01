@@ -4,13 +4,7 @@ using UnityEngine;
 
 public class MouseTurning : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    // makes the player turn towards wherever the mouse is
     void Update()
     {
         var direction = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);

@@ -1,4 +1,4 @@
-usin g System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -66,7 +66,7 @@ public class ShooterEnemyAI : MonoBehaviour
         // if cooldown is active then shoot at the player
         if (cooldown)
         {
-            Instantiate(projectilePrefab, transform.position, transform.rotation); // shoots the bullet
+            Instantiate(projectilePrefab, transform.position + offset, transform.rotation); // shoots the bullet
             StartCoroutine(ShootTime(cooldownTime)); // starts the cooldown for shooting
             cooldown = false; // stops the enemy from shooting more than one at a time
         }

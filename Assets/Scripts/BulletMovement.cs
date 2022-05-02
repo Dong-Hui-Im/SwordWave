@@ -20,5 +20,16 @@ public class BulletMovement : MonoBehaviour
         {
             bulletSpeed *= -1;
         }
+        // destroys enemies or players if the bullet makes contact
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+        }
     }
 }

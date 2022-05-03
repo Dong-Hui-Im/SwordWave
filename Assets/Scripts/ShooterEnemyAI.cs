@@ -35,13 +35,17 @@ public class ShooterEnemyAI : MonoBehaviour
         {
             playerInRange = true;
         }
-    }
-    // detects if the enemy is not in the range of the player
-    private void OnTriggerExit(Collider other)
-    {
+
+        // detects if the enemy is not in the range of the player
         if(other.tag == "PlayerShield")
         {
             playerInRange = false;
+        }
+
+        // Destroys the player if it comes in contact with the enemy
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(other.gameObject);
         }
     }
 

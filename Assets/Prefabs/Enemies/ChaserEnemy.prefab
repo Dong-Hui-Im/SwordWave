@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8384697504102606091}
   - component: {fileID: -7965219138416398871}
   - component: {fileID: 6990106144619352185}
+  - component: {fileID: -7612030227039865600}
   m_Layer: 0
   m_Name: ChaserEnemy
   m_TagString: Enemy
@@ -129,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2582975545321427659, guid: ed9076e36c4f64a46a88988ff6a11692, type: 3}
-  speed: 20
+  speed: 15
   distance: 0
   playerChar: {fileID: 2582975545321427658, guid: ed9076e36c4f64a46a88988ff6a11692, type: 3}
   xRange: 44
@@ -144,5 +145,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa5210fae62dfac47a893f3e2d79abe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7612030227039865600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8384697504102606088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a666fa18505f0746bc0d476c1d87a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

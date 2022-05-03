@@ -49,4 +49,12 @@ public class ChaserEnemyAI : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, zRange);
         }
     }
+    // Destroys the player if it comes in contact with the enemy
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(other.gameObject);
+        }
+    }
 }

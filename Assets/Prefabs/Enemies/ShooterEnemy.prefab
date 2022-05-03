@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6923713157996051918}
   - component: {fileID: 3590085215574921572}
   - component: {fileID: -8184230187814369273}
+  - component: {fileID: 8471678008655272038}
   m_Layer: 0
   m_Name: ShooterEnemy
   m_TagString: Enemy
@@ -149,3 +150,15 @@ MonoBehaviour:
   cooldownTime: 2
   playerInRange: 0
   projectilePrefab: {fileID: 4063456771652092036, guid: fd0913d65ca24da459c92fbc1f4f9409, type: 3}
+--- !u!114 &8471678008655272038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5477677833287114761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a666fa18505f0746bc0d476c1d87a18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

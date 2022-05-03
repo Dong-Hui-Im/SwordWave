@@ -13,9 +13,12 @@ public class SpawnManager : MonoBehaviour
     //wave spawn variables
     public int waveNumber;
 
+    private GameManager gameManager;
+
     void Start()
     {
         SpawnWave(waveNumber); // starts the wave at the start of the game
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     // increases the amount of enemies spawned by 1 every wave
     void SpawnWave(int enemiesToSpawn)
@@ -33,6 +36,7 @@ public class SpawnManager : MonoBehaviour
         if (enemyCount == 0)
         {
             waveNumber++;
+           gameManager.UpdateWave(waveNumber);
             SpawnWave(waveNumber);
         }
     }
@@ -46,5 +50,4 @@ public class SpawnManager : MonoBehaviour
 
         Instantiate(enemyPrefabs[enemyIndex], spawnPos, enemyPrefabs[enemyIndex].transform.rotation);
     }
-
 }

@@ -70,5 +70,4 @@ public class PlayerMovement : MonoBehaviour
         speed = 40; // returns the players speed back to normal
         cooldown = true;
     }
-
 }

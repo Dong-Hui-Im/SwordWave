@@ -9,7 +9,7 @@ public class ShooterEnemyAI : MonoBehaviour
     private Rigidbody rbEnemy;
     public float speed;
     public float distance;
-    private Vector3 offset = new Vector3(0, 0, 3);
+    private Vector3 offset = new Vector3(0, 0, 2);
     public Transform playerChar; 
 
     // boundary variables

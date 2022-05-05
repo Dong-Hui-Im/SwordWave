@@ -35,9 +35,9 @@ public class SpawnManager : MonoBehaviour
         // if there are no enemies left, increase the wave number by 1 and start a new wave
         if (enemyCount == 0)
         {
-            waveNumber++;
+           waveNumber++;
            gameManager.UpdateWave(waveNumber);
-            SpawnWave(waveNumber);
+           SpawnWave(waveNumber);
         }
     }
 
@@ -45,9 +45,7 @@ public class SpawnManager : MonoBehaviour
     void SpawnEnemy()
     {
         Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 1, Random.Range(-spawnRangeZ, spawnRangeZ));
-
         int enemyIndex = Random.Range(0, enemyPrefabs.Length);
-
         Instantiate(enemyPrefabs[enemyIndex], spawnPos, enemyPrefabs[enemyIndex].transform.rotation);
     }
 }

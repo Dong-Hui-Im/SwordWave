@@ -38,14 +38,8 @@ public class ShooterEnemyAI : MonoBehaviour
         {
             playerInRange = true;
         }
-<<<<<<< Updated upstream
-
-        // detects if the enemy is not in the range of the player
-        if(other.tag == "PlayerShield")
-=======
         // if the detected trigger is not 'PlayerShield', 'playerInRange' is false
         if (other.tag != "PlayerShield")
->>>>>>> Stashed changes
         {
             playerInRange = false;
         }
@@ -81,18 +75,13 @@ public class ShooterEnemyAI : MonoBehaviour
         // if cooldown is active then shoot at the player
         if (cooldown)
         {
-<<<<<<< Updated upstream
-            Instantiate(projectilePrefab, transform.position + offset, transform.rotation); // shoots the bullet
-            StartCoroutine(ShootTime(cooldownTime)); // starts the cooldown for shooting
-            cooldown = false; // stops the enemy from shooting more than one at a time
-=======
             // creates the bullet at the current position of the enemy
             Instantiate(projectilePrefab, transform.position, transform.rotation);
             // starts the shoot cooldown
             StartCoroutine(ShootTime(cooldownTime));
             // sets the cooldown to false to stop the enemy from shooting more than once at a time
             cooldown = false; 
->>>>>>> Stashed changes
+
         }
         // enemy boundaries
         // if the enemy is outside of the given boundaries

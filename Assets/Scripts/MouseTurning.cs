@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MouseTurning : MonoBehaviour
 {
-    // makes the player turn towards wherever the mouse is
+    // makes the player face towards wherever the mouse is
     void Update()
     {
         var direction = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);

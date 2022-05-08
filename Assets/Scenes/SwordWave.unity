@@ -404,6 +404,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerShield
       objectReference: {fileID: 0}
+    - target: {fileID: 2582975545321427661, guid: ed9076e36c4f64a46a88988ff6a11692, type: 3}
+      propertyPath: speed
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582975545321427661, guid: ed9076e36c4f64a46a88988ff6a11692, type: 3}
+      propertyPath: cooldownTime
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 2582975545465415716, guid: ed9076e36c4f64a46a88988ff6a11692, type: 3}
       propertyPath: m_Constraints
       value: 94

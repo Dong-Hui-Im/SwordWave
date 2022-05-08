@@ -9,7 +9,8 @@ public class DestroyOutOfBounds : MonoBehaviour
     private float xRange = 44;
     private float zRange = 14;
 
-    //if anything is outside the boundary, it destroys the object
+    // if anything happens to make it outside the boundary eg. bullets 
+    // destroy the object
     void Update()
     {
         if (transform.position.x < -xRange)

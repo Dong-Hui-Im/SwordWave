@@ -7,7 +7,7 @@ public class BulletMovement : MonoBehaviour
     // bullet speed variable
     public float bulletSpeed = 40;
 
-    // moves the bullet
+    // moves the bullet forwards
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * bulletSpeed);

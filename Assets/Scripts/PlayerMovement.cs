@@ -19,13 +19,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        cooldown = true; // makes sure that the cooldown of the dash has reset 
+        // makes sure that the cooldown of the dash has reset 
+        cooldown = true; 
     }
 
 
     void Update()
     {
-        //player boundaries
+        // player boundaries
+        // if the player is outside of the given boundaries
+        // return them back to the edge of the boundary they were trying to leave from
         if (transform.position.x < -xRange)
         {
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
@@ -43,10 +46,14 @@ public class PlayerMovement : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, zRange);
         }
 
-        //player movement
+        // player movement
+        // if the detected input is a horizontal input
+        // accelerate the player on the horizontal axis depending on the input eg. left or right
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
 
+        // if the detected input is a vertical input
+        // accelerate the playe on the vertical axis depending on the input eg. up or down
         verticalInput = Input.GetAxis("Vertical");
         transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
 
@@ -56,8 +63,10 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 speed = speed * 5;
-                StartCoroutine(DashTime(cooldownTime)); // starts the cooldown timer
-                cooldown = false; // this stops the player from spamming the dash
+                // starts the cooldown timer
+                StartCoroutine(DashTime(cooldownTime));
+                // this stops the player from spamming the dash
+                cooldown = false; 
             }
 
         }
@@ -66,7 +75,9 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator DashTime(float dashCooldown)
     {
         yield return new WaitForSeconds(dashCooldown);
-        speed = 40; // returns the players speed back to normal
+        // returns the players speed back to normal
+        speed = 40; 
+        // resets the dash cooldown so that the dash can be used again
         cooldown = true;
     }
 }

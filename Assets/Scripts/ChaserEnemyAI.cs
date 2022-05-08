@@ -18,20 +18,25 @@ public class ChaserEnemyAI : MonoBehaviour
 
     void Start()
     {
+        // gets the rigidbody of whatever is using this script for later use
         rbEnemy = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        player = GameObject.Find("PlayerShield"); // constantly finds the player 
+        // finds the location of the player every frame
+        player = GameObject.Find("PlayerShield");
 
-        // makes the enemy constantly move towards the player
+        // makes the enemy move towards the player every frame
         Vector3 lookDirection = (player.transform.position - transform.position).normalized;
         rbEnemy.AddForce(lookDirection * speed);
 
-        transform.LookAt(playerChar); // makes the enemy look towards the player
+        // makes the enemy look towards the player
+        transform.LookAt(playerChar); 
 
         // enemy boundaries
+        // if the enemy is outside of the given boundaries
+        // return them back to the edge of the boundary they were trying to leave from
         if (transform.position.x < -xRange)
         {
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);

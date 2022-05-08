@@ -33,20 +33,26 @@ public class ShooterEnemyAI : MonoBehaviour
     // detects any triggers that the enemy collides with
     private void OnTriggerEnter(Collider other)
     {
-        // if the detected trigger has the tag 'PlayerShield', 'playerInRange' is true
+        // if the detected trigger is 'PlayerShield', 'playerInRange' is true
         if(other.tag == "PlayerShield")
         {
             playerInRange = true;
         }
-        // if the detected trigger does not have the tag 'PlayerShield', 'playerInRange' is false
+<<<<<<< Updated upstream
+
+        // detects if the enemy is not in the range of the player
+        if(other.tag == "PlayerShield")
+=======
+        // if the detected trigger is not 'PlayerShield', 'playerInRange' is false
         if (other.tag != "PlayerShield")
+>>>>>>> Stashed changes
         {
             playerInRange = false;
         }
-        // if the detected trigger has tag 'Player'
+
+        // Destroys the player if it comes in contact with the enemy
         if (other.gameObject.CompareTag("Player"))
         {
-            // destroy the player
             Destroy(other.gameObject);
         }
     }
@@ -75,14 +81,19 @@ public class ShooterEnemyAI : MonoBehaviour
         // if cooldown is active then shoot at the player
         if (cooldown)
         {
+<<<<<<< Updated upstream
+            Instantiate(projectilePrefab, transform.position + offset, transform.rotation); // shoots the bullet
+            StartCoroutine(ShootTime(cooldownTime)); // starts the cooldown for shooting
+            cooldown = false; // stops the enemy from shooting more than one at a time
+=======
             // creates the bullet at the current position of the enemy
             Instantiate(projectilePrefab, transform.position, transform.rotation);
             // starts the shoot cooldown
             StartCoroutine(ShootTime(cooldownTime));
             // sets the cooldown to false to stop the enemy from shooting more than once at a time
             cooldown = false; 
+>>>>>>> Stashed changes
         }
-
         // enemy boundaries
         // if the enemy is outside of the given boundaries
         // return them back to the edge of the boundary they were trying to leave from

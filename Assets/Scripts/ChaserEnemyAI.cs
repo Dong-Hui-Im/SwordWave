@@ -7,9 +7,8 @@ public class ChaserEnemyAI : MonoBehaviour
     // movement variables
     public GameObject player;
     private Rigidbody rbEnemy;
-    public float speed;
-    public float distance;
-    private Vector3 offset = new Vector3(0, 0, 3);
+    public float enemySpeed;
+    private Vector3 posOffset = new Vector3(0, 0, 3);
     public Transform playerChar;
 
     // boundary variables
@@ -29,7 +28,7 @@ public class ChaserEnemyAI : MonoBehaviour
 
         // makes the enemy move towards the player every frame
         Vector3 lookDirection = (player.transform.position - transform.position).normalized;
-        rbEnemy.AddForce(lookDirection * speed);
+        rbEnemy.AddForce(lookDirection * enemySpeed);
 
         // makes the enemy look towards the player
         transform.LookAt(playerChar); 

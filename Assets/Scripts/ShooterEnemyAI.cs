@@ -7,9 +7,8 @@ public class ShooterEnemyAI : MonoBehaviour
     // movement variables
     private GameObject player;
     private Rigidbody rbEnemy;
-    public float speed;
-    public float distance;
-    private Vector3 offset = new Vector3(0, 0, 2);
+    public float enemySpeed;
+    private Vector3 posOffset = new Vector3(0, 0, 2);
     public Transform playerChar; 
 
     // boundary variables
@@ -17,7 +16,7 @@ public class ShooterEnemyAI : MonoBehaviour
     public float zRange = 10f;
 
     // cooldown/shooting variables
-    public bool cooldown = true;
+    public bool isCooldown = true;
     public float cooldownTime = 10f;
     public bool playerInRange;
     public GameObject projectilePrefab;
@@ -27,7 +26,7 @@ public class ShooterEnemyAI : MonoBehaviour
         // gets the rigidbody of whatever is using this script for later use
         rbEnemy = GetComponent<Rigidbody>();
         // makes sure that the cooldown of the shooting has reset 
-        cooldown = true; 
+        isCooldown = true; 
     }
 
     // detects any triggers that the enemy collides with
@@ -64,23 +63,23 @@ public class ShooterEnemyAI : MonoBehaviour
         {
             // move away from the player
             Vector3 moveDirection = (player.transform.position - transform.position).normalized;
-            rbEnemy.AddForce(moveDirection * -speed);
+            rbEnemy.AddForce(moveDirection * -enemySpeed);
         }
         // else move towards the player
         else
         {
             Vector3 moveDirection = (player.transform.position - transform.position).normalized;
-            rbEnemy.AddForce(moveDirection * speed);
+            rbEnemy.AddForce(moveDirection * enemySpeed);
         }
         // if cooldown is active then shoot at the player
-        if (cooldown)
+        if (isCooldown)
         {
             // creates the bullet at the current position of the enemy
             Instantiate(projectilePrefab, transform.position, transform.rotation);
             // starts the shoot cooldown
             StartCoroutine(ShootTime(cooldownTime));
             // sets the cooldown to false to stop the enemy from shooting more than once at a time
-            cooldown = false; 
+            isCooldown = false; 
         }
         // enemy boundaries
         // if the enemy is outside of the given boundaries
@@ -107,6 +106,6 @@ public class ShooterEnemyAI : MonoBehaviour
     {
         yield return new WaitForSeconds(shootCooldown);
         // sets 'cooldown' to true to reset the cooldown
-        cooldown = true;
+        isCooldown = true;
     }
 }

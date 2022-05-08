@@ -81,7 +81,6 @@ public class ShooterEnemyAI : MonoBehaviour
             StartCoroutine(ShootTime(cooldownTime));
             // sets the cooldown to false to stop the enemy from shooting more than once at a time
             cooldown = false; 
-
         }
         // enemy boundaries
         // if the enemy is outside of the given boundaries

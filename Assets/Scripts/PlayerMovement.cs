@@ -23,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
         cooldown = true; 
     }
 
-
     void Update()
     {
         // player boundaries
@@ -57,11 +56,13 @@ public class PlayerMovement : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
 
-        // if cooldown is active and left click is clicked, dash
+        // if cooldown is active 
         if (cooldown)
         {
+            // and left click is clicked, dash
             if (Input.GetMouseButtonDown(0))
             {
+                // multiply speed by 5 
                 speed = speed * 5;
                 // starts the cooldown timer
                 StartCoroutine(DashTime(cooldownTime));
@@ -74,7 +75,8 @@ public class PlayerMovement : MonoBehaviour
     // cooldown timer
     IEnumerator DashTime(float dashCooldown)
     {
-        yield return new WaitForSeconds(dashCooldown);
+        // wait for the duration of 'dashCooldown' + 5 extra
+        yield return new WaitForSeconds(dashCooldown + 5);
         // returns the players speed back to normal
         speed = 40; 
         // resets the dash cooldown so that the dash can be used again

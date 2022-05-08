@@ -39,6 +39,7 @@ public class SpawnManager : MonoBehaviour
     {
         // keeps track of all the enemies 
         enemyCount = FindObjectsOfType<Enemy>().Length; 
+
         // if there are no enemies left
         if (enemyCount == 0)
         {

@@ -15,9 +15,9 @@ public class PlayerMovement : MonoBehaviour
 
     // cooldown variables
     public bool isCooldown = true;
-    public float cooldownTime = 1f;
-    public float dashDuration = 1f;
-    public float dodgeSpeedMultiplier = 5;
+    public float cooldownTime = 1;
+    public float dashDuration = 0.1f;
+    public float dodgeSpeedMultiplier = 3;
 
     void Start()
     {

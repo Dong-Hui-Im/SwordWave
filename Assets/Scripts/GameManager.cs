@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI waveText;
     public TextMeshProUGUI gameOverText;
     public int waveNumber;
+    public Button restartButton;
 
     // destroy enemy variable
     public int enemiesOnScreen;
@@ -18,13 +21,16 @@ public class GameManager : MonoBehaviour
         // if the player  cannot be located
         if (GameObject.Find("Player") == null)
         {
+            // deactivates the spawner so that no more enemies spawn
+            GameObject spawner = GameObject.Find("SpawnManager");
+            spawner.SetActive(false);
             // refers to the 'DestroyAllEnemies' function
             DestroyAllEnemies();
             // display the 'game over' text
             gameOverText.text = "GAME OVER";
-
-            GameObject spawner = GameObject.Find("SpawnManager");
-            spawner.SetActive(false);
+            gameOverText.gameObject.SetActive(true);
+            // display the 'restart' button
+            restartButton.gameObject.SetActive(true);  
         }
     }
     // function that updates the wave counter
@@ -46,5 +52,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameEnemy);
         }
+    }
+    // restart game function
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

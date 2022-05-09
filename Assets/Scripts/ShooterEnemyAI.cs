@@ -12,12 +12,12 @@ public class ShooterEnemyAI : MonoBehaviour
     public Transform playerChar; 
 
     // boundary variables
-    public float xRange = 10f;
-    public float zRange = 10f;
+    public float xRange = 44f;
+    public float zRange = 14f;
 
     // cooldown/shooting variables
     public bool isCooldown = true;
-    public float cooldownTime = 10f;
+    public float cooldownTime = 2;
     public bool playerInRange;
     public GameObject projectilePrefab;
 
@@ -104,6 +104,7 @@ public class ShooterEnemyAI : MonoBehaviour
     // shooting cooldown timer
     IEnumerator ShootTime(float shootCooldown)
     {
+        // waits for the duration of 'shoolCooldown'
         yield return new WaitForSeconds(shootCooldown);
         // sets 'cooldown' to true to reset the cooldown
         isCooldown = true;

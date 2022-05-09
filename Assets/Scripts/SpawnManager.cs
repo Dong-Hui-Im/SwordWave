@@ -12,13 +12,12 @@ public class SpawnManager : MonoBehaviour
 
     //wave spawn variables
     public int waveNumber;
-
     private GameManager gameManager;
 
     void Start()
     {
         // starts the wave at the start of the game
-        SpawnWave(waveNumber); 
+        SpawnWave(waveNumber);
         // finds the 'GameManager'
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }

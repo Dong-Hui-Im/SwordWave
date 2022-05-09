@@ -8,12 +8,11 @@ public class ChaserEnemyAI : MonoBehaviour
     public GameObject player;
     private Rigidbody rbEnemy;
     public float enemySpeed;
-    private Vector3 posOffset = new Vector3(0, 0, 3);
     public Transform playerChar;
 
     // boundary variables
-    public float xRange = 10f;
-    public float zRange = 10f;
+    public float xRange = 44f;
+    public float zRange = 14f;
 
     void Start()
     {

@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 537ae3e88c00f0a4792bf96d87716ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 5
+  enemySpeed: 2
   playerChar: {fileID: 2582975545321427658, guid: ed9076e36c4f64a46a88988ff6a11692, type: 3}
   xRange: 44
   zRange: 14

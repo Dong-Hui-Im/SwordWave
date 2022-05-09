@@ -389,12 +389,24 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2582975545321427661, guid: ed9076e36c4f64a46a88988ff6a11692, type: 3}
+      propertyPath: playerSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582975545321427661, guid: ed9076e36c4f64a46a88988ff6a11692, type: 3}
       propertyPath: cooldownTime
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2582975545321427661, guid: ed9076e36c4f64a46a88988ff6a11692, type: 3}
       propertyPath: dashCooldown
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582975545321427661, guid: ed9076e36c4f64a46a88988ff6a11692, type: 3}
+      propertyPath: dashDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582975545321427661, guid: ed9076e36c4f64a46a88988ff6a11692, type: 3}
+      propertyPath: dodgeSpeedMultiplier
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2582975545465415712, guid: ed9076e36c4f64a46a88988ff6a11692, type: 3}
       propertyPath: m_Height
@@ -759,7 +771,7 @@ GameObject:
   - component: {fileID: 1151492113}
   m_Layer: 0
   m_Name: SpawnManager
-  m_TagString: Untagged
+  m_TagString: SpawnManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -843,6 +855,7 @@ MonoBehaviour:
   waveText: {fileID: 214454987}
   gameOverText: {fileID: 0}
   waveNumber: 0
+  enemiesOnScreen: 0
 --- !u!1 &1341460856
 GameObject:
   m_ObjectHideFlags: 0

@@ -75,7 +75,7 @@ public class ShooterEnemyAI : MonoBehaviour
         if (isCooldown)
         {
             // creates the bullet at the current position of the enemy
-            Instantiate(projectilePrefab, transform.position, transform.rotation);
+            Instantiate(projectilePrefab, transform.position + posOffset, transform.rotation);
             // starts the shoot cooldown
             StartCoroutine(ShootTime(cooldownTime));
             // sets the cooldown to false to stop the enemy from shooting more than once at a time

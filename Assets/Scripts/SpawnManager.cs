@@ -38,17 +38,17 @@ public class SpawnManager : MonoBehaviour
     void Update()
     {
         // keeps track of all the enemies 
-        enemyCount = FindObjectsOfType<Enemy>().Length; 
+        enemyCount = FindObjectsOfType<Enemy>().Length;
 
         // if there are no enemies left
         if (enemyCount == 0)
         {
-           // increase the wave number by one
-           waveNumber++;
-           // update the wave text to display the current wave
-           gameManager.UpdateWave(waveNumber);
-           // refer the 'SpawnWave' function with 'enemiesToSpawn' to be equal to the wave number
-           SpawnWave(waveNumber);
+            // increase the wave number by one
+            waveNumber++;
+            // update the wave text to display the current wave
+            gameManager.UpdateWave(waveNumber);
+            // refer the 'SpawnWave' function with 'enemiesToSpawn' to be equal to the wave number
+            SpawnWave(waveNumber);
         }
     }
 

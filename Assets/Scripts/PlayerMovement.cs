@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     // cooldown variables
     public bool isCooldown = true;
     public float cooldownTime = 1f;
+    public float dashDuration = 1f;
+    public float dodgeSpeedMultiplier = 5;
 
     void Start()
     {
@@ -63,23 +65,31 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 // multiply speed by 5 
-                playerSpeed = playerSpeed * 5;
-                // starts the cooldown timer
-                StartCoroutine(DashTime(cooldownTime));
+                playerSpeed = playerSpeed * dodgeSpeedMultiplier;
                 // this stops the player from spamming the dash
-                isCooldown = false; 
+                isCooldown = false;
+                // starts the dash duration timer
+                StartCoroutine(DashTime(dashDuration));
+                // starts the dash cooldown timer
+                StartCoroutine(DashCooldownTime(cooldownTime));
             }
 
         }
     }
-    // cooldown timer
+    // dash duration timer
     IEnumerator DashTime(float dashCooldown)
     {
-        // wait for the duration of 'dashCooldown' + 5 extra
-        yield return new WaitForSeconds(dashCooldown + 5);
+        // wait for the duration of 'dashCooldown' 
+        yield return new WaitForSeconds(dashCooldown);
         // returns the players speed back to normal
         playerSpeed = 40; 
-        // resets the dash cooldown so that the dash can be used again
+    }
+    // dash cooldown timer
+    IEnumerator DashCooldownTime(float dashCooldown)
+    {
+        // wait for the duration of 'dashCooldown'
+        yield return new WaitForSeconds(dashCooldown);
+        // turns 'isCooldown' back to true so the player can dash again 
         isCooldown = true;
     }
 }

@@ -130,8 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2582975545321427659, guid: ed9076e36c4f64a46a88988ff6a11692, type: 3}
-  speed: 10
-  distance: 0
+  enemySpeed: 1
   playerChar: {fileID: 2582975545321427658, guid: ed9076e36c4f64a46a88988ff6a11692, type: 3}
   xRange: 44
   zRange: 14

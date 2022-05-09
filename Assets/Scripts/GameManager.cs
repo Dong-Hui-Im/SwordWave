@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
             DestroyAllEnemies();
             // display the 'game over' text
             gameOverText.text = "GAME OVER";
+
+            GameObject spawner = GameObject.Find("SpawnManager");
+            spawner.SetActive(false);
         }
     }
     // function that updates the wave counter
